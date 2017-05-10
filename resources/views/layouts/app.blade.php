@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Start') }}</title>
+    <title>My Account</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <!-- Branding Image -->s
+                    <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         Start
                     </a>

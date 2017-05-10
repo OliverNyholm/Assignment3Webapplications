@@ -37,8 +37,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/">Start</a></li>
-        <li><a href="/products">All games</a></li>
-        <li><a href="/products/create">Add a product</a></li>
+        <li><a href="/games">All games</a></li>
+        <li><a href="/games/create">Add a game</a></li>
+        <li><a href="/stores">Show stores</a></li>
         @if (Route::has('login'))
                 @if (Auth::check())
                     <li><a href="{{ url('/home') }}">My Account</a></li>

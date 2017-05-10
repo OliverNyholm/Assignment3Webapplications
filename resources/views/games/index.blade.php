@@ -1,4 +1,4 @@
-''@extends('products.master')
+''@extends('games.master')
 
 
 @section('content')
@@ -13,7 +13,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="https://s-media-cache-ak0.pinimg.com/originals/fe/f3/ce/fef3ce4533219ab736a314809fa6f469.jpg" alt="Limbo">
+      <a href="/games/1"><img src="https://s-media-cache-ak0.pinimg.com/originals/fe/f3/ce/fef3ce4533219ab736a314809fa6f469.jpg" alt="Limbo"></a>
       <div class="carousel-caption">
         <h3>Limbo</h3>
         <p>Special price right now on Steam!!</p>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="item">
-      <img src="http://www.vpdaily.com/wp-content/uploads/2016/08/Inside.jpg" alt="Inside">
+      <a href="/games/2"><img src="http://www.vpdaily.com/wp-content/uploads/2016/08/Inside.jpg" alt="Inside"></a>
       <div class="carousel-caption">
         <h3>Inside</h3>
         <p>This game will make you insane!!!</p>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="item">
-      <img src="http://static.bandainamcogames.eu/sites_products/little-nightmares/2-xp/uploads/2016/08/sharing_hub.png" alt="Little Nightmares">
+      <a href="/games/3"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/51195b43077245.57e2848987b53.jpg" alt="Little Nightmares"></a>
       <div class="carousel-caption">
         <h3>Little Nightmares</h3>
         <p>This is a very scary game!</p>

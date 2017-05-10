@@ -12,16 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('products.index');
+    return view('games.index');
 });
 
-//Route::get("/products", "ProductController@index");
-//Route::get("/products/{id}", "ProductController@show");
+Route::resource("games", "GameController");
 
-//Route::group(['middleware' => 'auth'], function() {
-  Route::resource("products", "ProductController");
-//});
+Route::resource("stores", "StoreController");
 
+Route::resource("reviews", "ReviewController");
 
 Auth::routes();
 
