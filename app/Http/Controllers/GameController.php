@@ -47,6 +47,7 @@ class GameController extends Controller
       $game->title = $request->get("title");
       $game->developer = $request->get("developer");
       $game->image = $request->get("image");
+      $game->banner = $request->get("banner");
       $game->description = $request->get("description");
       $game->price = $request->get("price");
       $game->save();
@@ -107,6 +108,7 @@ class GameController extends Controller
       $game->title = $request->get("title");
       $game->developer = $request->get("developer");
       $game->image = $request->get("image");
+      $game->banner = $request->get("banner");
       $game->description = $request->get("description");
       $game->price = $request->get("price");
       $game->save();

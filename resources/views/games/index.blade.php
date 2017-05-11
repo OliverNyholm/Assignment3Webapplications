@@ -1,4 +1,4 @@
-''@extends('games.master')
+@extends('games.master')
 
 
 @section('content')
@@ -13,26 +13,27 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <a href="/games/1"><img src="https://s-media-cache-ak0.pinimg.com/originals/fe/f3/ce/fef3ce4533219ab736a314809fa6f469.jpg" alt="Limbo"></a>
+      <!--<a href="/games/1"><img src="https://s-media-cache-ak0.pinimg.com/originals/fe/f3/ce/fef3ce4533219ab736a314809fa6f469.jpg" alt="Limbo"></a>-->
+      <a href="/games/$games[count($games) - 3]->id"><img src="{{ $games[count($games) - 3]->banner }}" alt="{{ $games[count($games) - 3]->title }}"></a>
       <div class="carousel-caption">
-        <h3>Limbo</h3>
-        <p>Special price right now on Steam!!</p>
+        <h3>{{ $games[count($games) - 3]->title }}</h3>
+        <p>{{ $games[count($games) - 3]->description }}</p>
       </div>
     </div>
 
     <div class="item">
-      <a href="/games/2"><img src="http://www.vpdaily.com/wp-content/uploads/2016/08/Inside.jpg" alt="Inside"></a>
+      <a href="/games/$games[count($games) - 2]->id"><img src="{{ $games[count($games) - 2]->banner }}" alt="{{ $games[count($games) - 2]->title }}"></a>
       <div class="carousel-caption">
-        <h3>Inside</h3>
-        <p>This game will make you insane!!!</p>
+        <h3>{{ $games[count($games) - 2]->title }}</h3>
+        <p>{{ $games[count($games) - 2]->description }}</p>
       </div>
     </div>
 
     <div class="item">
-      <a href="/games/3"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/51195b43077245.57e2848987b53.jpg" alt="Little Nightmares"></a>
+      <a href="/games/$games[count($games) - 1]->id"><img src="{{ $games[count($games) - 1]->banner }}" alt="{{ $games[count($games) - 1]->title }}"></a>
       <div class="carousel-caption">
-        <h3>Little Nightmares</h3>
-        <p>This is a very scary game!</p>
+        <h3>{{ $games[count($games) - 1]->title }}</h3>
+        <p>{{ $games[count($games) - 1]->description }}</p>
       </div>
     </div>
   </div>
@@ -47,4 +48,5 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
 @endsection

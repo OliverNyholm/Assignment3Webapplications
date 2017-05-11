@@ -20,6 +20,10 @@
     <input type="text" class="form-control" id="image" name="image" placeholder="Add the image link here..." required>
   </div>
   <div class="form-group">
+    <label for="banner">Link for prouduct banner</label>
+    <input type="text" class="form-control" id="banner" name="banner" placeholder="Add the banner link here..." required>
+  </div>
+  <div class="form-group">
     <label for="description">Description</label>
     <input type="text" class="form-control" id="description" name="description" placeholder="Add a description about game here..." required>
   </div>

@@ -18,6 +18,7 @@ class CreateGamesTable extends Migration
         $table->string("title");
         $table->string("developer");
         $table->string("image");
+        $table->string("banner");
         $table->string("description");
         $table->float("price");
         $table->timestamps();

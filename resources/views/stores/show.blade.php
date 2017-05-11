@@ -11,7 +11,7 @@
 
   @foreach ($store->games as $game)
     <div class="container">
-      <a href="/games/{{ $game->id }}"><h2>{{ $game->title }}</h2><img src="{{ $game->image }}"></a>
+      <a href="/games/{{ $game->id }}"><h2>{{ $game->title }}</h2><img src="{{ $game->image }}" onerror="this.src='http://i63.tinypic.com/2yoydms.png'"></a>
     </div>
   @endforeach
 

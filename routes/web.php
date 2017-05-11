@@ -11,8 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('games.index');
+use App\Game;
+use Illuminate\Http\Request;
+
+Route::get('/', function (Request $request) {
+    $games = Game::all();
+    return view('games.index', [
+      "games" => $games
+    ]);
 });
 
 Route::resource("games", "GameController");

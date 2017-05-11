@@ -2,7 +2,7 @@
 <html>
   <head>
       <meta charset="utf-8">
-      <title>Cheap Games</title>
+      <title>Gamers for gamers</title>
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -38,11 +38,30 @@
       <ul class="nav navbar-nav">
         <li><a href="/">Start</a></li>
         <li><a href="/games">All games</a></li>
-        <li><a href="/games/create">Add a game</a></li>
         <li><a href="/stores">Show stores</a></li>
         @if (Route::has('login'))
                 @if (Auth::check())
+                    <li><a href="/games/create">Add a game</a></li>
                     <li><a href="{{ url('/home') }}">My Account</a></li>
+                    <li class="dropdown">
+                        <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
                 @else
                     <li><a href="{{ url('/login') }}">Login</a></li>
                     <li><a href="{{ url('/register') }}">Register</a></li>

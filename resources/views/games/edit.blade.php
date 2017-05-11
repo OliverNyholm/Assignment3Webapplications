@@ -21,6 +21,10 @@
     <input type="text" class="form-control" id="image" name="image" value="{{ $game->image }}" placeholder="Add the image here...">
   </div>
   <div class="form-group">
+    <label for="banner">Link for prouduct banner</label>
+    <input type="text" class="form-control" id="banner" name="banner" value="{{ $game->banner }}" placeholder="Add the banner here...">
+  </div>
+  <div class="form-group">
     <label for="description">Description</label>
     <input type="text" class="form-control" id="description" name="description" value="{{ $game->description }}" placeholder="Add the description here...">
   </div>

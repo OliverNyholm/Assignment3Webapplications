@@ -3,17 +3,18 @@
 
 @section('content')
 <!-- Buttons for adding the game -->
-<form action="{{ $game->id }}" method="post" style="float:right">
-  {{ method_field('DELETE') }}
-  {{ csrf_field() }}
-  <input type="submit" value="Delete game" class="btn btn-danger" style="float:right">
-</form>
-<form action="{{ $game->id }}/edit" method="get" style="float:right">
-  <input type="submit" value="Edit game" class="btn btn-info" style="float:right">
-</form>
-<form action="/reviews/create" method="get" style="float:right">
-  <input type="submit" value="Add review" class="btn btn-primary" style="float:right">
-</form>
+
+@if (Auth::check())
+  <form action="{{ $game->id }}" method="post" style="float:right">
+    {{ method_field('DELETE') }}
+    {{ csrf_field() }}
+    <input type="submit" value="Delete game" class="btn btn-danger" style="float:right">
+  </form>
+  <form action="{{ $game->id }}/edit" method="get" style="float:right">
+    <input type="submit" value="Edit game" class="btn btn-info" style="float:right">
+  </form>
+@endif
+<a href="/reviews/create?game_id={{ $game->id }}" class="btn btn-primary" style="float:right">Add new review </a>
 
 <h1>{{$game->title }}</h1>
 <p>{{ $game->developer }}</p>
@@ -26,7 +27,7 @@
 <div class="container">
   <h3>{{ $game->description }} </h3>
 </div>
-<img src="{{$game->image }}" alt="http://i63.tinypic.com/2yoydms.png">
+<img src="{{$game->image }}" onerror="this.src='http://i63.tinypic.com/2yoydms.png'">
 
 </br>
 <h1> Reviews about this game </h1>

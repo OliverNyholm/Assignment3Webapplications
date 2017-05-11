@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-  public function create()
+  public function create(Request $request)
   {
-      return view("reviews.create");
+      return view("reviews.create", [
+        "game_id" => $request->get("game_id")
+      ]);
   }
 
   /**
@@ -27,6 +29,6 @@ class ReviewController extends Controller
     $review->game_id = $request->get("game_id");
     $review->save();
 
-    return redirect()->action('GameController@index')->with('status', 'Comment saved!');
+    return redirect()->action('GameController@show', ['id' =>   $review->game_id])->with('status', 'Comment saved!');
   }
 }
